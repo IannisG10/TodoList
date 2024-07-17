@@ -1,0 +1,79 @@
+
+body{
+  position: relative;
+  background-color: #333;
+  height: 100%;
+ 
+}
+
+.TittleField,.TextField{
+  background: none;
+  outline: none;
+  border: 2px solid rgb(37, 37, 37);
+  height: 25px;
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+.addButton{
+  height: 39px;
+  margin-top: 1px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4d4d4d;
+}
+.taskBox{
+  display: flex;
+  position: absolute;
+  left: 33%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* champ  texte */
+
+/* .inputTittle{
+  background: none;
+  outline: none;
+  border: 2px solid rgb(37, 37, 37);
+  border-radius: 5px;
+  height: 25px;
+  padding: 0.4rem;
+  width: 30%;
+} */
+input{
+  width: 200px;
+}
+
+/* Conteneur des inputs */
+.inputContainer{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  
+  margin-top: 25px;
+}
+
+/* Button d'ajout de taches */
+/* .addButton{
+  margin: 7px;
+  padding: 7px;
+  height: 2.4rem;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4d4d4d;
+} */
+
+/* .task-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+} */
+
+
