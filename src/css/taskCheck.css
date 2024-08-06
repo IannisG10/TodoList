@@ -1,0 +1,17 @@
+.completeWrapper{
+    display: flex;
+    position: absolute;
+    left: 33%;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  .taskNone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4d4d4d;
+  }

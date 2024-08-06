@@ -3,11 +3,11 @@ import { useState } from "react";
 import TaskList from "./taskList";
 
 
-const TextField = ()=>{
-
+const TextField = ({task,setTask,trash,setTrash})=>{
     const [textValue,setTextValue] = useState("");
     const [titlleValue,setTittleValue] = useState("");
-    const [task,setTask] = useState([]);
+    const [saveId,setSaveId] = useState(0);
+
 
     const handleText = (e)=>{
         setTextValue(e.target.value);
@@ -20,20 +20,34 @@ const TextField = ()=>{
             alert("Completer le cahmp texte et le titre !");
             return;
         }
+
         let taskItem = {
-            id : new Date(),
+            id : saveId,
             text : textValue,
-            tittle : titlleValue
+            tittle : titlleValue,
+            completed : false
         }
+        setSaveId((prevId)=>prevId+1);
         setTask([...task,taskItem]);
         setTextValue("");
         setTittleValue("");
     }
-    const deleteTask = (id)=>{
-        let taskdelete = [...task];
-        taskdelete.splice(id,1);
 
-        setTask(taskdelete); 
+    const deleteTask = (id)=>{
+        
+        setTask((prevTask)=> {
+           const taskCopy = [...prevTask];
+           const taskToDelete = taskCopy.filter(item=>item.id !== id);
+           
+           return taskToDelete;
+        })
+             
+    }
+    
+    const completeTask = (id)=>{
+        setTask((prevTask)=>prevTask.map((task)=>
+            task.id === id ? {...task,completed :!task.completed}:task
+        ));
     }
     return (
         <>
@@ -59,13 +73,12 @@ const TextField = ()=>{
                             onClick={addTask}
                     >Ajouter</button>
                 </div>
-                
-
             </div>
 
             <div className="taskBox">
                 <TaskList task={task}
                           deleteTask={deleteTask}
+                          completeTask={completeTask}
                 />
             </div>
         </>

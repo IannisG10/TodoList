@@ -1,6 +1,39 @@
 import React from "react";
 import '../css/navBar.css'
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+function MainTask(){
+
+    return(
+        <>
+            <div className="menu-field">
+                Notes
+            </div>
+        </>
+    );
+}
+function CompleteTask(){
+
+    return(
+        <>
+            <div className="menu-field">
+                Completés
+            </div>
+        </>
+    );
+}
+
+function DeleteTask(){
+
+    return(
+        <>
+            <div className="menu-field"> 
+                Supprimées
+            </div>
+        </>
+    );
+}
 
 
 function NavBar(){
@@ -17,7 +50,11 @@ function NavBar(){
                     <div className="bar"></div>
                 </div>
                 <div className={`banner ${isOpen ? 'slide-out':'slide-in'}`}>
-
+                    <ul>
+                        <li><Link to="/" style={{color:'white',textDecoration:'none'}}><MainTask/></Link></li>
+                        <li><Link to="/taskcheck" style={{color:'white',textDecoration:'none'}}><CompleteTask/></Link></li>
+                        <li><Link to="/deletetask" style={{color:'white',textDecoration:'none'}}><DeleteTask/></Link></li>
+                    </ul>
                 </div>
             </nav>
         </>
