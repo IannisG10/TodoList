@@ -1,19 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import TaskList from "./taskList";
 
 const TextField = ({task,setTask,trash,setTrash})=>{
     const [textValue,setTextValue] = useState("");
     const [titlleValue,setTittleValue] = useState("");
     const [saveId,setSaveId] = useState(0);
+
    
-    //Un efete de bord qui permet de manipuler les taches au sein du localStorage
     useEffect(()=>{
-        localStorage.setItem("tasks",JSON.stringify(task));
-        task = JSON.parse(localStorage.getItem("tasks"));
+        localStorage.setItem("tasks",JSON.stringify(task))
     },[task])
-    
 
     //Fonction qui controle le chagngement de valeur dans le champ texte
     const handleText = (e)=>{
