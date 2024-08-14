@@ -1,0 +1,76 @@
+.Login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 20px;
+    transform: translate(-50%,30%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0,.6);
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Login-box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Login-box .info_area{
+    position: relative;
+}
+.Login-box .info_area input{
+    width: 100%;
+    padding: 4px 0;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    margin-bottom: 22px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.Login-box .info_area label{
+    position: absolute;
+    top: 0;
+    transition: .2s;
+    left: 0;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    pointer-events: none;
+}
+.Login-box .info_area input:focus ~ label
+{
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 11px;
+}
+button{
+    border: none;
+    padding: 8px;
+    background-color: #505050;
+    border-radius: 5px;
+}
+.acountExisting,.noAcount{
+    height: 45px;
+}
+.noAcount p{
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.acountExisting p{
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

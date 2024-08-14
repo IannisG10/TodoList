@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "./navBar";
-import TextField from "./textField";
+import NavBar from "../navBar";
+import TextField from "../textField";
 
 function Home({task,setTask,trash,setTrash}){
 

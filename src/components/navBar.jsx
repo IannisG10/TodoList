@@ -51,7 +51,7 @@ function NavBar(){
                 </div>
                 <div className={`banner ${isOpen ? 'slide-out':'slide-in'}`}>
                     <ul>
-                        <li><Link to="/" style={{color:'white',textDecoration:'none'}}><MainTask/></Link></li>
+                        <li><Link to="/Home" style={{color:'white',textDecoration:'none'}}><MainTask/></Link></li>
                         <li><Link to="/taskcheck" style={{color:'white',textDecoration:'none'}}><CompleteTask/></Link></li>
                         <li><Link to="/deletetask" style={{color:'white',textDecoration:'none'}}><DeleteTask/></Link></li>
                     </ul>

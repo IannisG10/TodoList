@@ -19,6 +19,7 @@ body{
   height: 39px;
   margin-top: 1px;
   border: none;
+  cursor: pointer;
   border-radius: 3px;
   font-weight: 600;
   color: #fff;

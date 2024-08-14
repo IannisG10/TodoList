@@ -11,6 +11,14 @@ function TaskList({task,deleteTask,completeTask}){
                 {task.map((item)=>(
                     <div className="taskWrapper" key={item.id}>
                         <div className="contentWrapper">
+                            <div className="date-container" style={{fontSize:13,
+                                fontWeight:"bold"
+                             }}>
+                                {item.date} à <span style={{color:"white"}}>{item.hours < 10 ? "0"+item.hours :
+                                item.hours } :{item.minutes < 10 ? "0"+item.minutes :
+                                item.minutes} :{item.seconds < 10 ? "0"+item.seconds : item.seconds}</span>
+
+                            </div>
                             <div className="tittle-container">
                                 {item.tittle}
                             </div>
