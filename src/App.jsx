@@ -1,42 +1,44 @@
-import Home from './components/routes/Home'
-import TaskCheck from './components/routes/taskCheck'
-import TaskDelete from './components/routes/taskDelete'
-import './App.css'
-import SignUp from './components/routes/signUp'
-import SignIn from './components/routes/signIn'
-import React from 'react'
-import { useState,useEffect } from 'react'
-import { Route,Routes } from 'react-router-dom'
+import Notes from "./components/Routes/notes"
+import TaskComplete from "./components/Routes/taskcomplete"
+import TaskDelete from "./components/Routes/taskDelete"
+import "./App.css"
+import { Routes,Route } from "react-router-dom"
+import { useState,useEffect } from "react";
+import { ThemeProvider } from "./hook/useTheme"
+
 
 function App() {
  
-  const [task,setTask] = useState([]);
+  const [task,setTask] = useState(()=>{
+    const saveStorage = localStorage.getItem("tasks");
+
+    return saveStorage ? JSON.parse(saveStorage) : [];
+  });
   const [trash,setTrash] = useState([]);
 
   useEffect(()=>{
-    document.title = "TodoList"
-  })
+      localStorage.setItem("tasks",JSON.stringify(task));
+  },[task])
+
   
-  const filteredTask = task.filter(item=>item.completed);
-  
+
+  const taskFiltered = task.filter(item => item.isComplete);
 
   return (
     <>
-      <Routes>
-        <Route path='/' element={<SignUp/>}/>
-        <Route path='/sign-in' element={<SignIn/>}/>
-        
-        <Route path='/Home' element={<Home task={task}
-                                        setTask={setTask}
-                                        trash={trash}
-                                        setTrash={setTrash}
-        />}/>
-        <Route path='/taskcheck' element={<TaskCheck task={filteredTask}/>}/>
-        <Route path='/deletetask' element={<TaskDelete task={trash}/>}/>
-      </Routes>
-       
-       
-       
+          <ThemeProvider>
+              <Routes>
+                  <Route path="/" element={<Notes task={task} 
+                          setTask={setTask}
+                          trash={trash}
+                          setTrash={setTrash}        
+                  />}/>
+
+                  <Route path="task-complete" element={<TaskComplete task={taskFiltered}/>}/>
+                  <Route path="task-delete" element={<TaskDelete task={trash}/>}/>
+              </Routes>
+          </ThemeProvider>
+         
     </>
   )
 }

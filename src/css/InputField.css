@@ -1,0 +1,40 @@
+.inputContent{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 50px;
+    left: 450px; 
+}
+input[type="text"]{
+    border: none;
+    background-color: #cfd2cd;
+    color: black;
+    border: 2px solid #e2e2e2;
+    padding: 0 3px;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+input[type="text"],button{
+    height: 40px;
+    font-size: 16px;
+}
+button{
+    flex: 1;
+    border: none;
+    background-color: #a6a2a2;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(0.98);
+    transition: .2s;
+}
+.darkInput .inputContent input{
+    background-color: #555555;
+    color: white;
+    border: 2px solid #525252;
+}
+.darkInput .inputContent button{
+    color: white;
+    background-color: #2a2c29;
+}

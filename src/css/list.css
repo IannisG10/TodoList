@@ -1,0 +1,45 @@
+.taskWrapper{
+    border: 2px black solid;
+    padding: 5px;
+    background-color: #cecece;
+    border-radius: 3px;
+    display: flex;
+    gap: 25px;
+    width: 320px;
+    justify-content: space-between;
+    align-items: center;
+}
+.taskWrapper.dark{
+    background-color: #3f3b3be7;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.taskWrapper.dark .text-section .tittle-field,
+.taskWrapper.dark .text-section .text-field{
+    color: rgb(243, 243, 243);
+}
+
+.tittle-field{
+    font-weight: bold;
+    font-size: 25px;
+}
+.delete:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+.complete{
+    transition: 0.2s;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+.text-section{
+    display: flex;
+    flex-direction: column;
+}
+.icon-section{
+    display: flex;
+    flex-direction: row;
+}
